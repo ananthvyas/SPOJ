@@ -1,5 +1,6 @@
 package spoj;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 class STREETR {
@@ -28,51 +29,46 @@ class STREETR {
 		return gcd(a, b - a);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		try {
-			Reader in = new Reader();
-			// Scanner in = new Scanner(System.in);
-			PrintWriter pw = new PrintWriter(System.out, true);
-			int n = 0;
-			long[] diff;
-			long[] arr = null;
-			long gcd = 0;
 
-			n = in.nextInt();
+		Reader in = new Reader();
+		// Scanner in = new Scanner(System.in);
+		PrintWriter pw = new PrintWriter(System.out, true);
+		int n = 0;
+		long[] diff;
+		long[] arr = null;
+		long gcd = 0;
 
-			diff = new long[n - 1];
-			arr = new long[n];
+		n = in.nextInt();
 
-			for (int i = 0; i < n; i++) {
-				arr[i] = in.nextLong();
-			}
+		diff = new long[n - 1];
+		arr = new long[n];
 
-			for (int i = 1; i < n; i++) {
-				diff[i - 1] = arr[i] - arr[i - 1];
-			}
+		for (int i = 0; i < n; i++) {
+			arr[i] = in.nextLong();
+		}
 
-			gcd = multipleGCD(diff, 0, n - 2);
+		for (int i = 1; i < n; i++) {
+			diff[i - 1] = arr[i] - arr[i - 1];
+		}
 
-			if (arr != null) {
-				int i = 1;
-				long k = arr[0];
-				int cnt = 0;
-				while (i < arr.length) {
-					if (k + gcd != arr[i]) {
-						cnt++;
-						k += gcd;
-					} else {
-						k = arr[i];
-						i++;
-					}
+		gcd = multipleGCD(diff, 0, n - 2);
+
+		if (arr != null) {
+			int i = 1;
+			long k = arr[0];
+			int cnt = 0;
+			while (i < arr.length) {
+				if (k + gcd != arr[i]) {
+					cnt++;
+					k += gcd;
+				} else {
+					k = arr[i];
+					i++;
 				}
-				pw.println(cnt);
 			}
-		} catch (Exception e) {
-
+			pw.println(cnt);
 		}
 	}
 }
-
-
