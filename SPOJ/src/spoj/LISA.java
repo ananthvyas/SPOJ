@@ -1,7 +1,7 @@
 package spoj;
 import java.util.Scanner;
 
-public class Lisa {
+public class LISA {
 	static long[][] memmin;
 	static long[][] memmax;
 
