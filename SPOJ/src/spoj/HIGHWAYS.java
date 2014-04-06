@@ -5,27 +5,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-class Vertex implements Comparable<Vertex> {
-	int distance;
-	int id;
-
-	Vertex(int id, int distance) {
-		this.distance = distance;
-		this.id = id;
-	}
-
-	@Override
-	public int compareTo(Vertex v1) {
-		// TODO Auto-generated method stub
-
-		if (v1.distance < distance)
-			return 1;
-		if (v1.distance > distance)
-			return -1;
-		return 0;
-
-	}
-}
 
 
 

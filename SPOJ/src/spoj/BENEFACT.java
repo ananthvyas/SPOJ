@@ -4,15 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-class Edge {
-	int to;
-	int weight;
 
-	Edge(int to, int weight) {
-		this.to = to;
-		this.weight = weight;
-	}
-}
 
 
 
