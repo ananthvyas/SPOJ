@@ -1,5 +1,6 @@
 package spoj;
-import java.util.Scanner;
+
+import java.io.PrintWriter;
 
 class LASTDIG {
 	static int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -37,12 +38,13 @@ class LASTDIG {
 	public static void main(String[] args) {
 		try {
 			initMods();
-			Scanner sc = new Scanner(System.in);
+			Reader sc = new Reader();
+			PrintWriter pw = new PrintWriter(System.out, true);
 			int num = sc.nextInt();
 			for (int i = 0; i < num; i++) {
 				int a = sc.nextInt();
 				long b = sc.nextLong();
-				System.out.println(getLastDig(a, b));
+				pw.println(getLastDig(a, b));
 			}
 			sc.close();
 		} catch (Exception e) {
